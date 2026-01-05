@@ -8,12 +8,14 @@ export default defineConfig({
   plugins: [
     react(), 
     tsconfigPaths(), 
-    tailwindcss()
+    tailwindcss(),
   ],
   resolve: {
     alias: {
       // This maps the "@" symbol to your src folder
       "@": path.resolve(__dirname, "./src"),
+    base: process.env.VITE_BASE_URL || "/deploy-test",
+
     },
   },
 })
